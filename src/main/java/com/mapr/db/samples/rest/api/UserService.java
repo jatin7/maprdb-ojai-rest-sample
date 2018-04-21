@@ -60,6 +60,7 @@ public class UserService {
     // TODO: use POJO when API supports it
     Document custRecord = MapRDB.newDocument(user);
 
+
     table.insertOrReplace(custRecord);
     table.flush();
     return Response.created(new URI("/api/users/" + ((Document)custRecord).getIdString())).build();
@@ -298,10 +299,6 @@ public class UserService {
     MaprDBHelper.deleteTable(TABLE_NAME);
     return Response.noContent().build();
   }
-
-
-
-
 
 
 
